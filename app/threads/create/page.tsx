@@ -1,4 +1,3 @@
-// app/threads/create/page.tsx
 'use client';
 
 import { useState, ChangeEvent, useEffect, JSX } from 'react';
@@ -254,7 +253,7 @@ export default function CreateThreadPage(): JSX.Element {
                                         id={`tweet-${tweet.id}`}
                                         value={tweet.content}
                                         onChange={(e) => handleTweetContentChange(tweet.id, e.target.value)}
-                                        className="min-h-[80px] focus-visible:ring-primary"
+                                        className="min-h-[80px] focus-visible:ring-primary resize-none"
                                         rows={3}
                                         disabled={isPublishing}
                                     />

@@ -1,5 +1,4 @@
-// /pages/login.tsx
-'use client'; // Necessary for client-side interactivity like onClick and useState
+'use client'
 
 import { Button } from "@/components/ui/button";
 import {
@@ -13,16 +12,13 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
-import Head from "next/head";
-import { useState, ChangeEvent, FormEvent, JSX } from "react"; // For handling form input and events
+import { useState, ChangeEvent, FormEvent, JSX } from "react";
 
-// Optional: For icons, e.g., from lucide-react
-// import { Twitter as TwitterIcon, Chrome as GoogleIcon } from "lucide-react";
 
 export default function LoginPage(): JSX.Element {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false); // Example loading state
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleEmailChange = (e: ChangeEvent<HTMLInputElement>): void => {
     setEmail(e.target.value);
@@ -81,12 +77,9 @@ export default function LoginPage(): JSX.Element {
   };
 
   return (
-    <>
-      <Head>
-        <title>Login - Thread Weaver</title>
-        <meta name="description" content="Login or create an account to start generating Twitter threads with Thread Weaver." />
-      </Head>
-      <div className="flex min-h-screen flex-col items-center justify-center bg-background p-4 selection:bg-primary/20">
+    <div>
+      <div className="flex flex-col min-h-screen
+       items-center justify-center bg-background selection:bg-primary/20">
         <Card className="w-full max-w-md">
           <CardHeader className="space-y-1 text-center">
             <CardTitle className="text-3xl font-bold tracking-tight"> {/* Added tracking-tight */}
@@ -177,6 +170,6 @@ export default function LoginPage(): JSX.Element {
           </CardFooter>
         </Card>
       </div>
-    </>
+    </div>
   );
 }
